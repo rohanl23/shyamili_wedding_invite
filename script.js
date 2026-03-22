@@ -9,21 +9,19 @@ const tapScreen = document.querySelector(".tap-to-begin");
 
 tapScreen.addEventListener("click", () => {
 
-  // ✅ CRITICAL FIX: Force video play (required for iOS)
-  if (video.paused) {
-    video.play().catch(() => {});
-  }
+  // Start video ONLY after user interaction
+  video.currentTime = 0;
+  video.play().catch(() => {});
 
-  // Fullscreen (works on Android/Desktop, ignored on iOS)
+  // Fullscreen (ignored on iOS)
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen().catch(() => {});
   }
 
-  // Fade out overlay
+  // Fade overlay
   gsap.to(".tap-to-begin", {
     opacity: 0,
-    duration: 0.8,
-    ease: "power2.out",
+    duration: 0.6,
     onComplete: () => {
       tapScreen.style.display = "none";
     }
@@ -32,13 +30,16 @@ tapScreen.addEventListener("click", () => {
 }, { once: true });
 
 // INTRO
-video.addEventListener("timeupdate", () => {
-  if (!video.duration) return;
+video.addEventListener("play", () => {
 
-  if (video.currentTime >= video.duration - 3 && !introDone) {
-    introDone = true;
-    playIntroAnimation();
-  }
+  // Fallback trigger after video starts
+  setTimeout(() => {
+    if (!introDone) {
+      introDone = true;
+      playIntroAnimation();
+    }
+  }, (video.duration - 3) * 1000 || 5000);
+
 });
 
 function playIntroAnimation() {
