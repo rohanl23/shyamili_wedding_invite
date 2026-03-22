@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Invite</title>
+
+<link rel="stylesheet" href="./style.css">
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lottie-web@5.7.14/build/player/lottie.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Great+Vibes&family=Playfair+Display&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="intro">
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="./assets/intro.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay">
+    <img src="./assets/ganesh.png" class="ganesh">
+
+    <div class="shloka">
+      <div class="line"><span>वक्रतुण्ड महाकाय</span></div>
+      <div class="line"><span>सूर्यकोटि समप्रभ</span></div>
+      <div class="line"><span>निर्विघ्नं कुरु मे देव</span></div>
+      <div class="line"><span>सर्वकार्येषु सर्वदा</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- HALDI -->
+<section class="panel haldi">
+  <div class="title haldi-title"><span>The Yellow Tales</span></div>
+
+  <div class="haldi-content">
+    <div class="poetry">
+      <p>Where laughter flows & love glows</p>
+      <p>All wrapped in shades of yellow</p>
+      <p>And smiles that say it all</p>
+    </div>
+
+    <div class="datetime-block">
+      <div class="label">Date & Time:</div>
+      <div class="datetime">09th May'26, 1pm onwards</div>
+    </div>
+  </div>
+
+  <div class="venue-block">
+    <div class="label">Venue:</div>
+    <a href="https://maps.app.goo.gl/crncx6QkCZM45L4y5" target="_blank" class="venue">
+      Praveg's Grand Eulogia, Thaltej, Ahmedabad
+    </a>
+  </div>
+
+  <div class="petals"></div>
+</section>
+
+<!-- RING -->
+<section class="panel ring">
+  <div id="sparkles"></div>
+
+  <div class="title ring-title"><span>Rings & Rhythm</span></div>
+
+  <div class="haldi-content">
+    <div class="poetry">
+      <p>Dance, laughter, and a little sparkle</p>
+      <p>Come celebrate love with us</p>
+      <p>As they put a ring on it</p>
+    </div>
+
+    <div class="datetime-block">
+      <div class="label">Date & Time:</div>
+      <div class="datetime">09th May'26, 8pm onwards</div>
+    </div>
+  </div>
+
+  <div class="venue-block ring-venue">
+    <div class="label">Venue:</div>
+    <a href="https://maps.app.goo.gl/crncx6QkCZM45L4y5" target="_blank" class="venue">
+      Praveg's Grand Eulogia, Thaltej, Ahmedabad
+    </a>
+  </div>
+</section>
+
+<!-- WEDDING -->
+<section class="panel wedding">
+  <div class="confetti-container"></div>
+
+  <div class="title wedding-title"><span>The Big Day</span></div>
+  <div class="wedding-subtitle shimmer">ROHAN WEDS SHYAMILI</div>
+
+  <div class="haldi-content">
+    <div class="datetime-block">
+      <div class="label">Date & Time:</div>
+      <div class="datetime">10th May'26, 7pm onwards</div>
+    </div>
+  </div>
+
+  <div class="venue-block wedding-venue">
+    <div class="label">Venue:</div>
+    <a href="https://maps.app.goo.gl/crncx6QkCZM45L4y5" target="_blank" class="venue">
+      Praveg's Grand Eulogia, Thaltej, Ahmedabad
+    </a>
+  </div>
+</section>
+
+<!-- THANK YOU -->
+<section class="panel thankyou">
+
+  <img src="./assets/logo.png" class="thankyou-logo">
+
+  <div class="thankyou-names">
+    <p>Smt. Shilpa Lalchandani</p>
+    <p>Shri Rajesh Lalchandani</p>
+  </div>
+
+  <div class="thankyou-request">
+    Request your gracious presence for<br>
+    the wedding of their beloved son
+  </div>
+
+  <div class="blessings">
+    <p class="blessings-title">With the blessings of,</p>
+    <p class="blessing-line">Smt. Rani Lalchandani</p>
+    <p class="blessing-line">Late Shri Sunderdas Lalchandani</p>
+    <p class="blessing-line">Smt. Devika Gopalani</p>
+    <p class="blessing-line">Shri Ramchand Gopalani</p>
+  </div>
+
+
+</section>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

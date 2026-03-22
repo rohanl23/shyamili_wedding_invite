@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Yatra One', serif;
+}
+
+.intro {
+  position: relative;
+  height: 100vh;
+}
+
+#introVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.ganesh {
+  width: 170px;
+  margin-bottom: 18px;
+  opacity: 0;
+  filter: drop-shadow(0 0 20px rgba(255, 200, 120, 0.9));
+}
+
+.shloka {
+  color: #5a2e12;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.line span {
+  display: inline-block;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 85px;
+  width: 100%;
+  text-align: center;
+  color: #5a2e12;
+  opacity: 0;
+}
+
+.arrow {
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid #5a2e12;
+  border-bottom: 2px solid #5a2e12;
+  transform: rotate(-45deg);
+  margin: 4px auto;
+  animation: wiggle 1.5s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-45deg) translateY(6px); }
+}
+
+.panel {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.haldi { background: url('./assets/haldi.jpg') center/cover no-repeat; }
+.ring { background: url('./assets/ring.jpg') center/cover no-repeat; }
+.wedding { background: url('./assets/wedding.jpg') center/cover no-repeat; }
+.thankyou { background: url('./assets/thankyou.jpg') center/cover no-repeat; }
+
+.title {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.haldi-title { color: #000; }
+.ring-title { color: #fff; }
+.wedding-title { color: #fff; }
+
+.haldi-content {
+  position: absolute;
+  top: 42%;
+  width: 100%;
+  text-align: center;
+}
+
+.poetry {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.datetime-block {
+  margin-top: 60px;
+}
+
+.label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.datetime {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* ✅ FIX: hide all venues initially */
+.venue-block {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+.ring-venue {
+  bottom: 18%;
+}
+
+.venue {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  color: #000;
+}
+
+.ring .title,
+.ring .poetry,
+.ring .label,
+.ring .datetime,
+.ring .venue {
+  color: #fff;
+}
+
+.wedding-subtitle {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #fff, #ffd700, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.wedding .label,
+.wedding .datetime,
+.wedding .venue {
+  color: #fff;
+}
+
+.wedding-venue {
+  top: 60%;
+  bottom: auto;
+}
+
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  opacity: 0.8;
+}
+
+.petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 204, 0, 0.8);
+  border-radius: 50%;
+}
+
+/* ===== THANK YOU FINAL ===== */
+
+.thankyou-logo {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  opacity: 0;
+  clip-path: circle(0% at 50% 50%);
+}
+
+.thankyou-names {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  line-height: 1.1;
+  opacity: 0;
+}
+
+.thankyou-request {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+.blessings {
+  position: absolute;
+  top: 75%;
+  width: 100%;
+  text-align: center;
+  line-height: 1.2;
+  opacity: 0;
+}
+
+.blessings-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
