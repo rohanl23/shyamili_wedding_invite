@@ -4,18 +4,26 @@ const video = document.getElementById("introVideo");
 let introDone = false;
 let petalsStarted = false;
 
-/* TAP TO BEGIN + FULLSCREEN */
+/* TAP TO BEGIN + FULLSCREEN + iOS FIX */
 const tapScreen = document.querySelector(".tap-to-begin");
 
 tapScreen.addEventListener("click", () => {
 
+  // ✅ CRITICAL FIX: Force video play (required for iOS)
+  if (video.paused) {
+    video.play().catch(() => {});
+  }
+
+  // Fullscreen (works on Android/Desktop, ignored on iOS)
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen().catch(() => {});
   }
 
+  // Fade out overlay
   gsap.to(".tap-to-begin", {
     opacity: 0,
     duration: 0.8,
+    ease: "power2.out",
     onComplete: () => {
       tapScreen.style.display = "none";
     }
